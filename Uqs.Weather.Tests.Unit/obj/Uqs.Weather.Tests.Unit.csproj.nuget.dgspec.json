@@ -1,0 +1,165 @@
+{
+  "format": 1,
+  "restore": {
+    "/Users/ruy/Documents/net/UqsWeather/Uqs.Weather.Tests.Unit/Uqs.Weather.Tests.Unit.csproj": {}
+  },
+  "projects": {
+    "/Users/ruy/Documents/net/UqsWeather/Uqs.Weather.Tests.Unit/Uqs.Weather.Tests.Unit.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/ruy/Documents/net/UqsWeather/Uqs.Weather.Tests.Unit/Uqs.Weather.Tests.Unit.csproj",
+        "projectName": "Uqs.Weather.Tests.Unit",
+        "projectPath": "/Users/ruy/Documents/net/UqsWeather/Uqs.Weather.Tests.Unit/Uqs.Weather.Tests.Unit.csproj",
+        "packagesPath": "/Users/ruy/.nuget/packages/",
+        "outputPath": "/Users/ruy/Documents/net/UqsWeather/Uqs.Weather.Tests.Unit/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/ruy/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "/Users/ruy/Documents/net/UqsWeather/Uqs.Weather/Uqs.Weather.csproj": {
+                "projectPath": "/Users/ruy/Documents/net/UqsWeather/Uqs.Weather/Uqs.Weather.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.Extensions.Logging.Abstractions": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "Microsoft.NET.Test.Sdk": {
+              "target": "Package",
+              "version": "[17.1.0, )"
+            },
+            "NSubstitute": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "NSubstitute.Analyzers.CSharp": {
+              "target": "Package",
+              "version": "[1.0.16, )"
+            },
+            "coverlet.collector": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[3.1.2, )"
+            },
+            "xunit": {
+              "target": "Package",
+              "version": "[2.4.1, )"
+            },
+            "xunit.runner.visualstudio": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.4.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.403/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/ruy/Documents/net/UqsWeather/Uqs.Weather/Uqs.Weather.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/ruy/Documents/net/UqsWeather/Uqs.Weather/Uqs.Weather.csproj",
+        "projectName": "Uqs.Weather",
+        "projectPath": "/Users/ruy/Documents/net/UqsWeather/Uqs.Weather/Uqs.Weather.csproj",
+        "packagesPath": "/Users/ruy/.nuget/packages/",
+        "outputPath": "/Users/ruy/Documents/net/UqsWeather/Uqs.Weather/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/ruy/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "AdamTibi.OpenWeather": {
+              "target": "Package",
+              "version": "[1.0.1, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[6.2.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.403/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
