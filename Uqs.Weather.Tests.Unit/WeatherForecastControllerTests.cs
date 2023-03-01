@@ -3,11 +3,27 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Logging.Abstractions;
 using NSubstitute;
 using Uqs.Weather.Controllers;
+using Uqs.Weather.Wrapper;
 
 namespace Uqs.Weather.Tests.Unit;
 
 public class WeatherForecastControllerTests
 {
+    private const double NEXT_T = 3.3;
+    private const double DAY5_T = 7.7;
+    private readonly DateTime _today = new(2022, 1, 1);
+    private readonly double[] _realWeatherTemps = new[] { 2, NEXT_T, 4, 5.5, 6, DAY5_T, 8 };
+    private readonly ILogger<WeatherForecastController> _loggerMock = Substitute.For<ILogger<WeatherForecastController>>();
+    private readonly INowWrapper _nowWrapper = Substitute.For<INowWrapper>();
+    private readonly IRandomWrapper _randomWrapperMock = Substitute.For<IRandomWrapper>();
+    private readonly IClient _clientMock = Substitute.For<IClient>();
+    private readonly WeatherForecastController _sut;
+
+    public WeatherForecastControllerTests()
+    {
+        _sut = new WeatherForecastController(_loggerMock, null!, _clientMock, _nowWrapper, _randomWrapperMock);
+    }
+
     [Theory]
     [InlineData(-100, -148)]
     [InlineData(-10.1, 13.8)]
@@ -26,20 +42,21 @@ public class WeatherForecastControllerTests
     }
 
     [Fact]
-    public async Task GetReal_RequestsToOpenWeather_MetricUnitIsUsed()
+    public void GetReal_RequestsToOpenWeather_MetricUnitIsUsed()
     {
-        IClient clientMock = Substitute.For<IClient>();
-        await clientMock.OneCallAsync(
-        Arg.Any<decimal>(),
-        Arg.Any<decimal>(),
-        Arg.Any<IEnumerable<Excludes>>(),
-        Arg.Any<Units>());
-        //.Returns(x => 
-        // {
-          //  OneCallResponse response = new OneCallResponse();
-        //    return Task.FromResult(response);
-       // });
+        // Arrange
 
+        OneCallResponse res = new OneCallResponseBuilder()
+            .SetTemps(new[] { 0, 3.3, 0, 0, 0, 0, 0 })
+            .Build();
+        // Act
         
+        _clientMock.OneCallAsync(Arg.Any<decimal>(),
+            Arg.Any<decimal>(),
+            Arg.Any<IEnumerable<Excludes>>(),
+            Arg.Any<Units>())
+
+        // Assert
+        .Returns(res);
     }
 }
